@@ -1,0 +1,32 @@
+<div>
+
+    <mat-card class="example-card center-screen" appearance="outlined">
+        <div *ngIf="showFront">
+
+            <mat-card-content>
+                <p>
+                    {{currentCard.question}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="toggleCard()">Show Answer</button>
+            </mat-card-actions>
+        </div>
+        <div *ngIf="!showFront">
+
+            <mat-card-content>
+                <p>
+                    {{currentCard.answer}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="toggleCard()">Show Question</button> <br>
+            </mat-card-actions>
+            <mat-card-actions>
+                <button class="hard-button" mat-button (click)="nextCard(0)">Hard</button>
+                <button class="notquite-button" mat-button (click)="nextCard(1)">Not quite</button>
+                <button class="easy-button"  mat-button (click)="nextCard(2)">Easy</button>
+            </mat-card-actions>
+        </div>
+</mat-card>
+</div>
